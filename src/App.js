@@ -1,6 +1,7 @@
 import './App.css';
 
 import NavBarView from './components/NavBarView';
+import AddToListView from './components/AddToListView';
 
 ///////////////////////////////////////////////////
 //  MAIN APPLICATION
@@ -9,9 +10,11 @@ import NavBarView from './components/NavBarView';
 function App() {
   return (
     <main>
+      {/* **** Navigation Bar *********** */}
       <NavBarView />
-      <div className='container mt-4 p2 round bg-white' >
-        <h1>To Do List</h1>
+      {/* ///// Main Content Area //////////// */}
+      <div className='container mt-4 p-2 round bg-white' >
+        <AddToListView />
       </div>
     </main>
   );
