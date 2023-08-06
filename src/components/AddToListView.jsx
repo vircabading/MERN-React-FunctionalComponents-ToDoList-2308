@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../styling/AddToList.css'
 
 ///////////////////////////////////////////////////
@@ -6,14 +6,25 @@ import '../styling/AddToList.css'
 ///////////////////////////////////////////////////
 
 const AddToListView = (props) => {
+    const [listEntry, setListEntry] = useState("");
+
+    const handleListEntryChange = (e) => {
+        const newListEntry = e.target.value;
+        setListEntry( newListEntry );
+    }
+
     return (
         <form className='m-2  p-2 round bg-grey form-group'>
-            <label>
+            <label for="listEntry">
                 <h5>Add new entry to list:</h5>
             </label>
             <input
                 type='text'
-                className='form-control round' 
+                className='form-control round'
+                id="listEntry"
+                name="listEntry"
+                value={ listEntry }
+                onChange={ handleListEntryChange }
                 placeholder='enter new item here' >
 
             </input>
@@ -23,6 +34,7 @@ const AddToListView = (props) => {
                     Add To List
                 </strong>
             </button>
+            <p>List Entry: { JSON.stringify(listEntry) }</p>
         </form>
     )
 }
