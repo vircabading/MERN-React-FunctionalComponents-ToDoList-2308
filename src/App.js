@@ -24,7 +24,6 @@ const App =() => {
       <div className='container mt-4 p-2 round bg-white' >
         <AddToListView addNewEntryToList={ addNewEntryToList } />
         <ListOutputView honeyDoList={ honeyDoList } />
-        <p>Honey Do List: { JSON.stringify(honeyDoList) }</p>
       </div>
     </main>
   );
