@@ -11,3 +11,9 @@
     background-color: #8AC4FF;
     color: white;
 }
+
+.btn-green {
+    border: none;
+    color: white;
+    background-color: #87CBAC;
+}
