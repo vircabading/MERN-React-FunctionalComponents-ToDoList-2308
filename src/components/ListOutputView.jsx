@@ -15,7 +15,7 @@ const ListOutputView = (props) => {
       <hr />
         {
           props.honeyDoList.map((entry, i) =>
-            <RowComp i={i} entry={entry} />
+            <RowComp i={i} entry={entry} key={i} />
           )
         }
     </div>

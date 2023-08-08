@@ -5,3 +5,9 @@
 .bg-blue {
     background-color: #8DE4FF;
 }
+
+.btn-blue {
+    border: none;
+    background-color: #8AC4FF;
+    color: white;
+}
