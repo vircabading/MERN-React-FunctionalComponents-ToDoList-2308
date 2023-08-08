@@ -44,7 +44,6 @@ const AddToListView = (props) => {
                     Add To List
                 </strong>
             </button>
-            <p>List Entry: { JSON.stringify(listEntry) }</p>
         </form>
     )
 }
