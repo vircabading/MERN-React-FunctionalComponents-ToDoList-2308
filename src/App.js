@@ -29,16 +29,30 @@ const App = () => {
     setHoneyDoList(changedHoneyDoList);
   }
 
+  const changeEntryDone = (targetEntry) => {
+    console.log("**** In change entry done:", targetEntry.text);
+    let newList = [...honeyDoList];
+    for (let i=0; i<honeyDoList.length; i++) {
+      if (newList[i].text == targetEntry.text) {
+         newList[i].done = !newList[i].done;
+      }
+    }
+    setHoneyDoList(newList);
+  }
+
   return (
     <main>
       {/* **** Navigation Bar *********** */}
       <NavBarView />
       {/* ///// Main Content Area //////////// */}
       <div className='container mt-4 p-2 round bg-white' >
+        {/* **** Add to the List *********** */}
         <AddToListView addNewEntryToList={addNewEntryToList} />
+        {/* **** Output the List ************ */}
         <ListOutputView
           honeyDoList={honeyDoList}
-          removeEntry={removeEntry} />
+          removeEntry={removeEntry}
+          changeEntryDone={ changeEntryDone } />
       </div>
     </main>
   );

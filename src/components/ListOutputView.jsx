@@ -19,6 +19,7 @@ const ListOutputView = (props) => {
               i={i} 
               entry={entry}
               removeEntry={props.removeEntry}
+              changeEntryDone={props.changeEntryDone}
               key={i} />
           )
         }
