@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import TextOutputComp from './TextOutputComp';
 
 ///////////////////////////////////////////////////
 //  ROW COMPONENT
@@ -14,7 +15,6 @@ const RowComp = (props) => {
   }
 
   const handleCheckChange = (e) => {
-    console.log("*** In Handle Check Change ******");
     props.changeEntryDone(props.entry);
   }
 
@@ -23,15 +23,24 @@ const RowComp = (props) => {
       {(props.i % 2 === 0) ?
         <div className='row m-2 p-2 bg-green round'>
           <div className='col-1'>{props.i + 1}</div>
-          <div className='col-6'>{props.entry.text}</div>
+          {/* **** Entry Text Output ************ */}
+          <TextOutputComp entry={props.entry} />
+          {/* **** Done Check Mark ************ */}
           <label className='col-2'>
-            <input type="checkbox" checked={props.entry.done} onChange={e => handleCheckChange(e)} /> Done:
+            Done:&nbsp;&nbsp;
+            <input type="checkbox" checked={props.entry.done} onChange={e => handleCheckChange(e)} />
           </label>
           <button className='col-2 round btn-blue' onClick={e => handleDeleteEntry(e)}>Delete</button>
         </div> :
         <div className='row m-2 p-2 bg-blue round'>
           <div className='col-1'>{props.i + 1}</div>
-          <div className='col-6'>{props.entry.text}</div>
+          {/* **** Entry Text Output ************ */}
+          <TextOutputComp entry={props.entry} />
+          {/* **** Done Check Mark ************ */}
+          <label className='col-2'>
+            Done:&nbsp;&nbsp;
+            <input type="checkbox" checked={props.entry.done} onChange={e => handleCheckChange(e)} />
+          </label>
           <button className='col-2 round btn-green' onClick={e => handleDeleteEntry(e)}>Delete</button>
         </div>
       }

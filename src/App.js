@@ -30,7 +30,6 @@ const App = () => {
   }
 
   const changeEntryDone = (targetEntry) => {
-    console.log("**** In change entry done:", targetEntry.text);
     let newList = [...honeyDoList];
     for (let i=0; i<honeyDoList.length; i++) {
       if (newList[i].text == targetEntry.text) {
